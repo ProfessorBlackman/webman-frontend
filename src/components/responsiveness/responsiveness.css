@@ -1,0 +1,88 @@
+.responsiveness-report {
+    padding: 2rem;
+    max-width: 1200px;
+    max-height: 80vh;
+    margin: 0 auto;
+}
+
+.report-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.report-meta {
+    color: #666;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+.viewport-grid,
+.elements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.viewport-card,
+.element-card {
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: #fff;
+    color: black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.test-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.success {
+    color: #2ecc71;
+}
+
+.warning {
+    color: #e74c3c;
+}
+
+.chart-container {
+    height: 400px;
+    margin-top: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .responsiveness-report {
+        padding: 1rem;
+    }
+
+    .viewport-grid,
+    .elements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-container {
+        height: 300px;
+    }
+}

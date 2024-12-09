@@ -94,7 +94,7 @@ const ResponsivenessReport: React.FC<ResponsivenessReportProps> = ({report}) => 
             <section className="resource-loading">
                 <h2>Resource Loading</h2>
                 <div className="chart-container">
-                    <Bar data={chartData} options={chartOptions}/>
+                    <Bar className="chart" data={chartData} options={chartOptions}/>
                 </div>
             </section>
 

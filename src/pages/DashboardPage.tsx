@@ -15,11 +15,12 @@ const DashboardPage: React.FC = () => {
     const [report, setReport] = useState<unknown>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const [analysisType, setAnalysisType] = useState('performance');
+    const [analysisType, setAnalysisType] = useState('Performance');
 
     const handleAnalyze = async () => {
         setLoading(true);
         setError(null);
+        setReport(null);
         if (!isValidUrl(url)) {
             setError('Invalid URL. Please enter a valid URL and try again.');
             setLoading(false);

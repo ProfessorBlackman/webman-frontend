@@ -2,6 +2,7 @@ import React from 'react';
 import {AccessibilityReportProps} from "./types.ts";
 import {IssueSection} from './IssueSection.tsx';
 import "./accessibility.css"
+import {cropString} from "../../utils/url_utils.ts";
 
 const AccessibilityReport: React.FC<AccessibilityReportProps> = ({analysisResults}) => {
     if (!analysisResults) {
@@ -36,9 +37,9 @@ const AccessibilityReport: React.FC<AccessibilityReportProps> = ({analysisResult
                     issues={analysisResults.image_issues}
                     renderIssue={(issue) => (
                         <>
-                            <strong>Element:</strong> {issue.element}<br/>
-                            <strong>Source:</strong> {issue.src}<br/>
-                            <strong>Issue:</strong> {issue.issue}
+                            <strong>Element:</strong> <span title={issue.element}>{cropString(issue.element)}</span><br/>
+                            <strong>Source:</strong> <span title={issue.src}>{cropString(issue.src)}</span><br/>
+                            <strong>Issue:</strong> <span title={issue.issue}>{cropString(issue.issue)}</span>
                         </>
                     )}
                 />
@@ -48,9 +49,9 @@ const AccessibilityReport: React.FC<AccessibilityReportProps> = ({analysisResult
                     issues={analysisResults.heading_issues}
                     renderIssue={(issue) => (
                         <>
-                            <strong>Element:</strong> {issue.element}<br/>
-                            <strong>Text:</strong> {issue.text}<br/>
-                            <strong>Issue:</strong> {issue.issue}
+                            <strong>Element:</strong> <span title={issue.element}>{cropString(issue.element)}</span><br/>
+                            <strong>Text:</strong> <span title={issue.text}>{cropString(issue.text)}</span><br/>
+                            <strong>Issue:</strong> <span title={issue.issue}>{cropString(issue.issue)}</span>
                         </>
                     )}
                 />
@@ -60,10 +61,10 @@ const AccessibilityReport: React.FC<AccessibilityReportProps> = ({analysisResult
                     issues={analysisResults.form_issues}
                     renderIssue={(issue) => (
                         <>
-                            <strong>Element:</strong> {issue.element}<br/>
-                            <strong>Type:</strong> {issue.type}<br/>
-                            <strong>ID:</strong> {issue.id}<br/>
-                            <strong>Issue:</strong> {issue.issue}
+                            <strong>Element:</strong> <span title={issue.element}>{cropString(issue.element)}</span><br/>
+                            <strong>Type:</strong> <span title={issue.type}>{cropString(issue.type)}</span><br/>
+                            <strong>ID:</strong> <span title={issue.id}>{cropString(issue.id)}</span><br/>
+                            <strong>Issue:</strong> <span title={issue.issue}>{cropString(issue.issue)}</span>
                         </>
                     )}
                 />
@@ -73,9 +74,9 @@ const AccessibilityReport: React.FC<AccessibilityReportProps> = ({analysisResult
                     issues={analysisResults.contrast_issues}
                     renderIssue={(issue) => (
                         <>
-                            <strong>Element:</strong> {issue.element}<br/>
-                            <strong>Text:</strong> {issue.text}<br/>
-                            <strong>Issue:</strong> {issue.issue}
+                            <strong>Element:</strong> <span title={issue.element}>{cropString(issue.element)}</span><br/>
+                            <strong>Text:</strong> <span title={issue.text}>{cropString(issue.text)}</span><br/>
+                            <strong>Issue:</strong> <span title={issue.issue}>{cropString(issue.issue)}</span>
                         </>
                     )}
                 />
@@ -85,12 +86,12 @@ const AccessibilityReport: React.FC<AccessibilityReportProps> = ({analysisResult
                     issues={analysisResults.aria_issues}
                     renderIssue={(issue) => (
                         <>
-                            <strong>Element:</strong> {issue.element}<br/>
-                            {issue.role && <><strong>Role:</strong> {issue.role}<br/></>}
-                            {issue.missing_attributes && (
+                            <strong>Element:</strong> <span title={issue.element}>{cropString(issue.element)}</span><br/>
+                            {issue.role && <><strong>Role:</strong> <span title={issue.role}>{cropString(issue.role)}</span><br/></>}
+                                    {issue.missing_attributes && (
                                 <><strong>Missing Attributes:</strong> {issue.missing_attributes.join(', ')}<br/></>
                             )}
-                            <strong>Issue:</strong> {issue.issue}
+                            <strong>Issue:</strong> {cropString(issue.issue)}
                         </>
                     )}
                 />

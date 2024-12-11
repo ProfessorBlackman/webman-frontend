@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = 'https://webman.onrender.com';
 
 export const analyzeWebsite = async (url: string, analysisType: string): Promise<unknown> => {
     const data = {
